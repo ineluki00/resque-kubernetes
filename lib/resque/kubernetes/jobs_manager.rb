@@ -72,7 +72,7 @@ module Resque
         return unless context
         @default_namespace = context.namespace if context.namespace
 
-        Kubeclient::Client.new(context.endpoint + scope, context.version, context.options)
+        Kubeclient::Client.new(context.endpoint + scope, context.version, **context.options)
       end
 
       def finished_jobs
